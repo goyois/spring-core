@@ -14,8 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberAppTest {
 
 
-    MemberService memberService = new MemberServiceImpl();
+    private final MemberService memberService;
 
+    public MemberAppTest(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     @Test
     void join() {

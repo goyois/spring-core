@@ -11,9 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderAppTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    private final MemberService memberService;
+    private final OrderService orderService;
 
+    public OrderAppTest(MemberService memberService, OrderService orderService) {
+        this.memberService = memberService;
+        this.orderService = orderService;
+    }
 
     @Test
     void createOrder() {
